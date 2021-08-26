@@ -34,3 +34,9 @@ jobs:
         name: 9isuper/fsgplus-fass
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+    # 登录腾讯的 docker 镜像仓库
+    - name: Login to tencnet docker image registry
+      run: echo "${{ secrets.TENCENT_REGISTRY_PASSWORD }}" |  docker login --username=100006496732 ccr.ccs.tencentyun.com --password-stdin
+    # 把构建好的镜像推送到腾讯仓库
+    - name: Push image to tencent docker image registry
+      run: docker push ccr.ccs.tencentyun.com/private_3389/fsgplus-fass:$(date +%s)
