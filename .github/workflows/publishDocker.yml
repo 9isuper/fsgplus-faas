@@ -1,6 +1,5 @@
 # GitHub Actions 的名称
 name: GitHub Actions SpringBoot Demo
-
 # 当 master 分支发生 push 或者 pull request 事件时触发 action
 on:
   push:
