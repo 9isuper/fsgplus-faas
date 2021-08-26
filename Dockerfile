@@ -5,6 +5,6 @@ ARG JAR_FILE=build/libs/*.jar
 # COPY 复制文件
 COPY target/fsgplus-faas*.jar app.jar
 # 暴露端口
-EXPOSE 8080
+EXPOSE 9000
 # CMD 容器启动命令
 CMD java -jar /app.jar
